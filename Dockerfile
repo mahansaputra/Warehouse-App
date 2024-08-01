@@ -18,7 +18,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the packaged jar file from the build stage
-COPY --from=build /app/target/OrderCart-spring-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/warehouse-app-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port
 EXPOSE 8082

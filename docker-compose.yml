@@ -1,0 +1,42 @@
+name: warehouse
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - postgres
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+#  ordercart:
+#    image: mahansa/order-cart:latest
+#    container_name: ordercart
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#    networks:
+#      - postgres
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ordercart
+#      - SPRING_DATASOURCE_USERNAME=postgres
+#      - SPRING_DATASOURCE_PASSWORD=postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  local_pgdata:

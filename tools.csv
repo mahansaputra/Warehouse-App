@@ -1,0 +1,11 @@
+name,quantity,productType
+"Hammer",25,"Hand Tool"
+"Screwdriver Set",40,"Hand Tool"
+"Cordless Drill",15,"Power Tool"
+"Adjustable Wrench",30,"Hand Tool"
+"Table Saw",5,"Power Tool"
+"Socket Set",20,"Hand Tool"
+"Impact Driver",10,"Power Tool"
+"Level",35,"Measurement Tool"
+"Utility Knife",50,"Cutting Tool"
+"Angle Grinder",8,"Power Tool"

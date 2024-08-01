@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set variables
-IMAGE_NAME="mahansa/order-cart"
+IMAGE_NAME="mahansa/warehouse"
 TAG="latest"
 
 # Build the Docker image

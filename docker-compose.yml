@@ -18,21 +18,20 @@ services:
       timeout: 10s
       retries: 5
 
-#  ordercart:
-#    image: mahansa/order-cart:latest
-#    container_name: ordercart
-#    ports:
-#      - 8080:8080
-#    depends_on:
-#      postgres:
-#        condition: service_healthy
-#    networks:
-#      - postgres
-#    environment:
-#      - SPRING_PROFILES_ACTIVE=docker
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ordercart
-#      - SPRING_DATASOURCE_USERNAME=postgres
-#      - SPRING_DATASOURCE_PASSWORD=postgres
+  warehouse:
+    image: mahansa/warehouse:latest
+    container_name: warehouse
+    ports:
+      - 8080:8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/warehouse_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
 
 networks:
   postgres:

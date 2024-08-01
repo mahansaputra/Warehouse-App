@@ -1,10 +1,11 @@
 package com.mahansa.warehouseapp.config;
 
+import org.springframework.context.annotation.Configuration;
+
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
-import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @OpenAPIDefinition(
@@ -26,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
 //        servers = {
 //                @Server(
 //                        description = "Local Environment",
-//                        url = "http:/localhost:8080"
+//                        url = "http://localhost:8080"
 //                ),
 //                @Server(
 //                        description = "Prod Environment",

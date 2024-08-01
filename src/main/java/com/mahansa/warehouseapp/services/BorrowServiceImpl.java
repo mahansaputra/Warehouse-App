@@ -1,5 +1,11 @@
 package com.mahansa.warehouseapp.services;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.mahansa.warehouseapp.dto.BorrowRecordDTO;
 import com.mahansa.warehouseapp.models.BorrowRecord;
 import com.mahansa.warehouseapp.models.Inventory;
@@ -7,11 +13,6 @@ import com.mahansa.warehouseapp.models.User;
 import com.mahansa.warehouseapp.repositories.BorrowRecordRepository;
 import com.mahansa.warehouseapp.repositories.InventoryRepository;
 import com.mahansa.warehouseapp.repositories.UserRepository;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class BorrowServiceImpl implements BorrowService{
@@ -63,7 +64,6 @@ public class BorrowServiceImpl implements BorrowService{
             borrowRecordDTO.setId(borrowRecord.getId());
             borrowRecordDTO.setUserId(borrowRecord.getUser().getId());
             borrowRecordDTO.setUserFullName(userFullName);
-            borrowRecordDTO.setUserRole(borrowRecord.getUser().getRole());
             borrowRecordDTO.setInventoryId(borrowRecord.getInventory().getId());
             borrowRecordDTO.setInventoryName(borrowRecord.getInventory().getName());
             borrowRecordDTO.setQuantity(borrowRecord.getQuantity());

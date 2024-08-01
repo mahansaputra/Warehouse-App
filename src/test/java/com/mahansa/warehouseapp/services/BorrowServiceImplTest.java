@@ -147,7 +147,6 @@ class BorrowServiceImplTest {
         assertEquals(1L, dto1.getId());
         assertEquals(1L, dto1.getUserId());
         assertEquals("John Doe", dto1.getUserFullName());
-        assertEquals("USER", dto1.getUserRole());
         assertEquals(1L, dto1.getInventoryId());
         assertEquals("Book", dto1.getInventoryName());
         assertEquals(1, dto1.getQuantity());
@@ -158,7 +157,6 @@ class BorrowServiceImplTest {
         assertEquals(2L, dto2.getId());
         assertEquals(2L, dto2.getUserId());
         assertEquals("Jane Smith", dto2.getUserFullName());
-        assertEquals("ADMIN", dto2.getUserRole());
         assertEquals(2L, dto2.getInventoryId());
         assertEquals("Laptop", dto2.getInventoryName());
         assertEquals(2, dto2.getQuantity());

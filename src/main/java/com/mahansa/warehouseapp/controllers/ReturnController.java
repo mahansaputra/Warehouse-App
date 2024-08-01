@@ -1,10 +1,16 @@
 package com.mahansa.warehouseapp.controllers;
 
-import com.mahansa.warehouseapp.services.ReturnService;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mahansa.warehouseapp.services.ReturnService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/return")
@@ -16,10 +22,14 @@ public class ReturnController {
         this.returnService = returnService;
     }
 
-    @PutMapping("{id}")
+    @Operation(
+        summary = "Return an Item",
+        description= "Return an Item using the Borrow ID in the Path Variable"
+    )
+    @PutMapping("{borrowId}")
     public ResponseEntity<String> returnItem(
-            @PathVariable Long id) {
-        int returned = returnService.returnItem(id);
+            @PathVariable Long borrowId) {
+        int returned = returnService.returnItem(borrowId);
 
         if (returned == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

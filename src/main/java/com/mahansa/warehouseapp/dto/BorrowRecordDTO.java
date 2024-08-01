@@ -6,7 +6,6 @@ public class BorrowRecordDTO {
     private Long id;
     private Long userId;
     private String userFullName;
-    private String userRole;
     private Long inventoryId;
     private String inventoryName;
     private int quantity;
@@ -38,14 +37,6 @@ public class BorrowRecordDTO {
 
     public void setUserFullName(String userFullName) {
         this.userFullName = userFullName;
-    }
-
-    public String getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
     }
 
     public Long getInventoryId() {
